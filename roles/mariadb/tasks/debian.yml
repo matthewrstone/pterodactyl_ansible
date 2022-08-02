@@ -13,11 +13,11 @@
 - name: Debian/Ubuntu | Start the MariaDB Service
   service: name=mariadb state=started enabled=yes
 
-- name: Debian/Ubuntu | Remove All Anonymous Users
-  mysql_user:
-    name: ''
-    host_all: yes
-    state: absent
+# - name: Debian/Ubuntu | Remove All Anonymous Users
+#   mysql_user:
+#     name: ''
+#     host_all: yes
+#     state: absent
 
 - name: Debian/Ubuntu | Disable Remote Root Login
   command: 'mysql -ne "{{ item }}"'
