@@ -25,8 +25,8 @@
     - DELETE FROM mysql.user WHERE User='root' AND Host NOT IN ('localhost', '127.0.0.1', '::1')
   changed_when: False
 
-- name: Debian/Ubuntu | Remove the Test Database
-  mysql_db: db=test state=absent
+# - name: Debian/Ubuntu | Remove the Test Database
+#   mysql_db: db=test state=absent
 
 - name: Debian/Ubuntu | Set the Root Password for MariaDB
   mysql_user: user=root check_implicit_admin=yes login_password="{{ db_pass }}" password="{{ db_pass }}" host="{{ item }}"
